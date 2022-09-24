@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Outfit", sans-serif;
+        background-color: hsl(217, 54%, 11%);
+      }
+
+      .nft {
+        max-width: 22rem;
+        padding: 1.5rem;
+        background-color: hsl(216, 50%, 16%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        box-shadow: 3px 1em 0.7em rgba(0, 0, 0, 0.3),
+          8px 1em 1em rgba(0, 0, 0, 0.1);
+      }
+
+      .img-eth {
+        width: 19rem;
+        border-radius: 15px;
+        transition: 0.5s ease;
+        backface-visibility: hidden;
+      }
+
+      /* .eff:hover .img-eth {
+        background-color: aqua;
+      } */
+      .over {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: 0.5s ease;
+        background-color: hsla(178, 100%, 62%, 0.489);
+        border-radius: 15px;
+      }
+      .eff {
+        position: relative;
+        cursor: pointer;
+      }
+      .img-eff {
+        width: 3rem;
+        border-radius: 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: 0.5s ease;
+      }
+      .eff:hover .img-eth {
+        opacity: 0.3;
+      }
+      .eff:hover .over {
+        opacity: 1;
+      }
+
+      .eff:hover .img-eff {
+        color: hsl(0, 0%, 100%);
+        opacity: 1;
+      }
+      .main-title {
+        color: hsl(0, 0%, 100%);
+        font-weight: 600;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .main-title:hover {
+        color: hsl(178, 100%, 50%);
+      }
+
+      .pra {
+        padding-top: 1rem;
+        font-size: 18px;
+        color: hsl(215, 32%, 50%);
+        line-height: 1.5;
+      }
+
+      .coin,
+      .eth,
+      .day-container {
+        display: flex;
+        flex-direction: row;
+      }
+      .coin {
+        justify-content: space-between;
+        margin-top: 1.5rem;
+      }
+      .eth-pra {
+        color: hsl(178, 100%, 50%);
+        font-size: 14px;
+        padding-left: 0.3rem;
+        font-weight: 600;
+      }
+      .icon-eth {
+        width: 0.6rem;
+        height: 1rem;
+      }
+      .day {
+        font-size: 16px;
+        padding-left: 0.4rem;
+        color: hsl(215, 32%, 50%);
+      }
+      .day-icon {
+        width: 1rem;
+        height: 0.5;
+      }
+
+      .user {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        padding: 1rem 0.5rem;
+        margin-top: 1.5rem;
+        border-top: 1px solid hsl(215, 32%, 27%);
+      }
+      .img-avatar {
+        border: 1px solid hsl(0, 0%, 100%);
+        border-radius: 50%;
+        width: 2rem;
+      }
+
+      .name-user {
+        color: hsl(215, 32%, 50%);
+        font-size: 16px;
+      }
+
+      span {
+        color: hsl(0, 0%, 100%);
+      }
+      span:hover {
+        cursor: pointer;
+        color: hsl(178, 100%, 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nft">
+      <div class="eff">
+        <img src="./images/image-equilibrium.jpg" class="img-eth" alt="Eth" />
+        <div class="over"></div>
+        <img src="./images/icon-view.svg" class="img-eff" alt="View" />
+      </div>
+
+      <div class="text">
+        <h1 class="main-title">Equilibrium #3429</h1>
+        <p class="pra">Our Equilibrium collection promotes balance and calm.</p>
+        <div class="coin">
+          <div class="eth">
+            <img
+              src="./images/icon-ethereum.svg"
+              class="icon-eth"
+              alt="eth icon"
+            />
+            <p class="eth-pra">0.041 ETH</p>
+          </div>
+          <div class="day-container">
+            <img src="./images/icon-clock.svg" class="day-icon" alt="O'clock" />
+            <p class="day">3 days left</p>
+          </div>
+        </div>
+        <div class="user">
+          <img src="./images/image-avatar.png" class="img-avatar" alt="User" />
+
+          <p class="name-user">Creation of <span>Jules Wyvern</span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
